@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 hero:
-  sub_heading: '<a href="https://www.google.com">Test</a>'
+  sub_heading: '`[`https://www.google.com/`](google.com)`'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
