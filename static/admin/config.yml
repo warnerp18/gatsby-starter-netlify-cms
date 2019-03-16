@@ -27,6 +27,125 @@ collections:
         name: "Index Page"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: Hero,
+            name: hero,
+            widget: object,
+            fields: [
+              { label: Add TrustPilot,
+                name: addTrustPilot,
+                required: false,
+                widget: boolean
+              },
+              {
+                label: "Add SideKick",
+                name: "addSideKick",
+                widget: "boolean",
+                required: false,
+                default: true },
+              { label: Hero Image,
+                name: hero_image,
+                required: false,
+                widget: image 
+              },
+              { label: Heading Type,
+                name: heading_type,
+                widget: select,
+                required: false,
+                options: [
+                  "Brand Heading",
+                  "Section Heading",
+                  "Paragraph Heading"
+                ]
+              },
+              { label: Hero Heading,
+                name: hero_heading,
+                required: false,
+                widget: string
+              },
+              { label: Sub Heading,
+                name: sub_heading,
+                widget: markdown,
+                required: false,
+              },
+              { label: CTA,
+                name: cta,
+                widget: object,
+                required: false,
+                fields: [
+                  { label: CTA Combo,
+                    name: cta_combo,
+                    widget: object,
+                    fields: [
+                      { label: Primary CTA Link,
+                        name: primary_cta_link,
+                        widget: string,
+                        required: false,
+                        pattern: ["", "External Links must include https://www. internal links start with ex: /us/apply/"]},
+                      { label: Open in new tab?,
+                        name: isPrimaryNewTab,
+                        required: false,
+                        widget: boolean
+                      },
+                      { label: Primary CTA Label,
+                        name: primary_cta_label,
+                        required: false,
+                        widget: string },
+                      { label: Secondary CTA Link,
+                        name: secondary_cta_link,
+                        required: false,
+                        widget: string },
+                      { label: Open in new tab?,
+                        name: isSecondaryNewTab,
+                        required: false,
+                        widget: boolean
+                      },
+                      { label: Secondary CTA Label,
+                        name: secondary_cta_label,
+                        required: false,
+                        widget: string }
+                    ]
+                  },
+                  { label: CTA,
+                    name: cta,
+                    widget: object,
+                    required: false,
+                    fields: [
+                      { label: CTA Type,
+                        name: cta_type,
+                        widget: select,
+                        required: false,
+                        options: [
+                          "CTA Primary",
+                          "CTA Secondary",
+                          "Text Link"
+                        ],
+                        default: "CTA Primary"
+                      },
+                      { label: Inverse CTA,
+                        name: inverse_cta,
+                        required: false,
+                        widget: boolean
+                      },
+                      { label: CTA Link,
+                        name: cta_link,
+                        required: false,
+                        widget: string },
+                      { label: Open in new tab?,
+                        name: isCTANewTab,
+                        required: false,
+                        widget: boolean
+                      },
+                      { label: CTA Label,
+                        name: cta_label,
+                        required: false,
+                        widget: string 
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
@@ -35,7 +154,6 @@ collections:
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Hero, name: hero, widget: object, fields: [{label: Hero Image, name hero_image, widget: image}, {label: CTA, name: cta widget: object, fields: [{label: CTA Combo, name: cta_combo, widget: select, options: [true, false]}  ]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
